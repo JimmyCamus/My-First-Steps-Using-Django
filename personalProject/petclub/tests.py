@@ -66,7 +66,7 @@ class PersonTests(TestCase):
 
 class PetTests(TestCase):
     def setUp(self):
-        # Create a dummy person model
+        # Create a dummy pet model
         pet_1 = Pet(species='dog',
                     name='name',
                     age=1,
