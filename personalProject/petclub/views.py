@@ -111,7 +111,7 @@ class PetAPIWiew(APIView):
 
         except Exception as e:
             print(e)
-            return Response({'id': [f'There is not a Person with id {client_id}']}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({'id': [f'There is not a Pet with id {client_id}']}, status=status.HTTP_400_BAD_REQUEST)
 
     def delete(self, request):
         if 'id' not in request.data.keys():
@@ -128,4 +128,4 @@ class PetAPIWiew(APIView):
             return Response({'data': serialized_pet.data}, status=status.HTTP_200_OK)
         except Exception as e:
             print(e)
-            return Response({'id': [f'There is not a Person with id {client_id}']})
+            return Response({'id': [f'There is not a Pet with id {client_id}']})
