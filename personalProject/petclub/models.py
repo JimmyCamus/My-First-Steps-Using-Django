@@ -11,12 +11,18 @@ class Person(models.Model):
     class Meta:
         managed = True
 
+
 class Pet(models.Model):
     id = models.AutoField(primary_key=True)
     species = models.CharField(max_length=50)
     name = models.CharField(max_length=50)
     age = models.IntegerField()
     color = models.CharField(max_length=50)
+    owner = models.ForeignKey(
+        'Person',
+        on_delete=models.CASCADE,
+        null=True
+    )
 
     class Meta:
         managed = True
